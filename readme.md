@@ -28,7 +28,8 @@ This project serves as an opportunity to practice:
 
 
 ## Technologies Used
-
+Node.js version 16.13.1
+prompt-sync version 4.2.0
 
 
 ## Features

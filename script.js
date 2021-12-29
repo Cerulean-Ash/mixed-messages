@@ -1,24 +1,20 @@
-const readline = require("readline");
-
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-  
-
-  rl.question("What is your name? ", function (answer) {
-    console.log(`Oh, so your name is ${answer}`);
-    console.log("Closing the interface");
-    rl.close();
-  });
 
 
-  
-//const groupPrompt = prompt('What muscle group would you like to work? (upper, lower or core) ');
+const prompt = require("prompt-sync")();
 
-//groupPrompt.toLowerCase()
-//console.log(groupPrompt);
-console.log('hello world');
+console.log(`Please select a muscle group to exercise \n1. upper body\n2. lower body\n3. core`)
+
+let numInput = 0;
+let input = '';
+
+do {
+    input = prompt("What number do you choose? ");
+    numInput = Number(input)
+}
+while (numInput != 1 && numInput !=2 && numInput !=3)      //will evaluate to false if one of the options (1, 2 or 3) is selected, and then break the loop
+
+
+console.log(`You have selected ${numInput}`);
 
 const message = {
     muscleGroup : ['upper', 'lower', 'core'],
@@ -35,14 +31,14 @@ const randomNumber = (arr) => {
 
 const group = () => {
     let selectedGroup = '';
-    switch (message.muscleGroup[randomNumber(message.muscleGroup)]) {
-        case 'upper':
+    switch (numInput) {
+        case 1:
             selectedGroup = message.upper[RandomNumber(message.upper)];
             break;
-        case 'lower':
+        case 2:
             selectedGroup = message.lower[RandomNumber(message.lower)];
             break;
-        case 'core':
+        case 3:
             selectedGroup = message.core[RandomNumber(message.core)];
             break; 
         default:
