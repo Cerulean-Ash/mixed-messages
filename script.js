@@ -9,4 +9,7 @@ const message = {
     reps: [8 , 9, 10, 11, 12, 13, 14, 15, 16, 17]
 };
 
+const randomNumber = (arr) => {
+    Math.floor(Math.random() * arr.length)
+}
 
