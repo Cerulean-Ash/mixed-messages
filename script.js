@@ -21,7 +21,7 @@ const message = {
     upper : ['arnold press', 'bench press', 'pullover', 'rear-delt fly', 'bicep curl', 'chest fly'],
     lower : ['static lunge', 'hip bridge', 'romanian deadlift', 'sumo squat', 'pistol squat', 'donkey kick'],
     core : ['forearm plank', 'russian twist', 'buttterfly sit-up', 'dead bug', 'body saw', 'jack knife'],
-    sets : [1, 2, 3, 4, 5],
+    sets : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     reps: [8 , 9, 10, 11, 12, 13, 14, 15, 16, 17],
 };
 
@@ -29,17 +29,21 @@ const randomNumber = (arr) => {
     return Math.floor(Math.random() * arr.length);
 };
 
-const group = () => {
+const randEntry = (key) => {
+    return message[key][randomNumber(message[key])];
+};
+
+const exercise = (num) => {
     let selectedGroup = '';
-    switch (numInput) {
+    switch (num) {
         case 1:
-            selectedGroup = message.upper[RandomNumber(message.upper)];
+            selectedGroup = message.upper[randomNumber(message.upper)];
             break;
         case 2:
-            selectedGroup = message.lower[RandomNumber(message.lower)];
+            selectedGroup = message.lower[randomNumber(message.lower)];
             break;
         case 3:
-            selectedGroup = message.core[RandomNumber(message.core)];
+            selectedGroup = message.core[randomNumber(message.core)];
             break; 
         default:
             selectedGroup = console.log('Something went wrong with your muscle group selection');            
@@ -47,3 +51,9 @@ const group = () => {
     return selectedGroup;
 };
 
+const genMessage = () => {
+    const resultantMessage = `Today we are doing ${exercise(numInput)}s. We'll do ${randEntry('sets')} sets of ${randEntry('reps')} reps each.`
+    console.log(resultantMessage);
+}
+
+genMessage();
