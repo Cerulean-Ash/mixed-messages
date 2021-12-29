@@ -21,7 +21,7 @@ const message = {
     upper : ['arnold press', 'bench press', 'pullover', 'rear-delt fly', 'bicep curl', 'chest fly'],
     lower : ['static lunge', 'hip bridge', 'romanian deadlift', 'sumo squat', 'pistol squat', 'donkey kick'],
     core : ['forearm plank', 'russian twist', 'buttterfly sit-up', 'dead bug', 'body saw', 'jack knife'],
-    sets : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    sets : [1, 2, 3, 4, 5, 6, 7, 8],
     reps: [8 , 9, 10, 11, 12, 13, 14, 15, 16, 17],
 };
 
@@ -52,7 +52,14 @@ const exercise = (num) => {
 };
 
 const genMessage = () => {
-    const resultantMessage = `Today we are doing ${exercise(numInput)}s. We'll do ${randEntry('sets')} sets of ${randEntry('reps')} reps each.`
+    let sets = randEntry('sets');
+    let reps = randEntry('reps');
+    let resultantMessage = `Today we are doing ${exercise(numInput)}s. `;
+    if (sets == 1) {
+        resultantMessage += `We'll do ${sets} set of ${reps} reps each.`;
+    } else {
+        resultantMessage += `We'll do ${sets} sets of ${reps} reps each.`;
+    }
     console.log(resultantMessage);
 }
 
