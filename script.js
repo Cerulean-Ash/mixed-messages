@@ -17,7 +17,7 @@ while (numInput != 1 && numInput !=2 && numInput !=3)      //will evaluate to fa
 console.log(`You have selected ${numInput}`);
 
 const message = {
-    muscleGroup : ['upper', 'lower', 'core'],
+    //muscleGroup : ['upper', 'lower', 'core'],
     upper : ['arnold press', 'bench press', 'pullover', 'rear-delt fly', 'bicep curl', 'chest fly'],
     lower : ['static lunge', 'hip bridge', 'romanian deadlift', 'sumo squat', 'pistol squat', 'donkey kick'],
     core : ['forearm plank', 'russian twist', 'buttterfly sit-up', 'dead bug', 'body saw', 'jack knife'],
