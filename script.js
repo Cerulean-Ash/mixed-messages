@@ -2,19 +2,18 @@
 
 const prompt = require("prompt-sync")();
 
-console.log(`Please select a muscle group to exercise \n1. upper body\n2. lower body\n3. core`)
+console.log(`Welcome to the random exercise generator`)
+console.log(`What muscle group would you like to exercise \n1. upperbody\n2. lowerbody\n3. core`)
 
 let numInput = 0;
 let input = '';
 
 do {
-    input = prompt("What number do you choose? ");
+    input = prompt("Select a muscle grouping by inputting its respective number? ");
     numInput = Number(input)
 }
-while (numInput != 1 && numInput !=2 && numInput !=3)      //will evaluate to false if one of the options (1, 2 or 3) is selected, and then break the loop
+while (numInput != 1 && numInput !=2 && numInput !=3);   //will evaluate to false if one of the options (1, 2 or 3) is selected, and then break the loop
 
-
-console.log(`You have selected ${numInput}`);
 
 const message = {
     //muscleGroup : ['upper', 'lower', 'core'],
@@ -38,12 +37,15 @@ const exercise = (num) => {
     switch (num) {
         case 1:
             selectedGroup = message.upper[randomNumber(message.upper)];
+            console.log(`You have an upperbody exercise`);
             break;
         case 2:
             selectedGroup = message.lower[randomNumber(message.lower)];
+            console.log(`You have selected a lowerbody exercise`);
             break;
         case 3:
             selectedGroup = message.core[randomNumber(message.core)];
+            console.log(`You have selected a core exercise`);
             break; 
         default:
             selectedGroup = console.log('Something went wrong with your muscle group selection');            
