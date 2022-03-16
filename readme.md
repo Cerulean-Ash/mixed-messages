@@ -1,5 +1,5 @@
 # Mixed Messages
-This is random exercise generator program written in javascript and run in the terminal via node.js
+This is a random exercise generator program written in javascript and run in the terminal via node.js
 
 This project was undertaken as part of the codecademy full stack engineer career path.
 
